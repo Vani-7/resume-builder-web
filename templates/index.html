@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1a242f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Builder</h1>
+    <form action="/generate" method="post" enctype="multipart/form-data">
+      <label>Profile Photo</label>
+      <input type="file" name="photo" accept="image/*">
+
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+
+      <label>Title</label>
+      <input type="text" name="title" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Phone</label>
+      <input type="text" name="phone" required>
+
+      <label>Address</label>
+      <input type="text" name="address" required>
+
+      <label>LinkedIn</label>
+      <input type="text" name="linkedin">
+
+      <label>Professional Summary</label>
+      <textarea name="summary" rows="4" required></textarea>
+
+      <label>Skills (comma separated)</label>
+      <textarea name="skills" rows="2" required></textarea>
+
+      <label>Certifications</label>
+      <textarea name="certifications" rows="2"></textarea>
+
+      <label>Languages (comma separated)</label>
+      <textarea name="languages" rows="2"></textarea>
+
+      <label>Work Experience (Job Title | Company | Dates | Description)</label>
+      <textarea name="experience" rows="4" required></textarea>
+
+      <label>Education (Degree | Institution | Year)</label>
+      <textarea name="education" rows="3" required></textarea>
+
+      <label>Projects (Title | Description)</label>
+      <textarea name="projects" rows="3"></textarea>
+
+      <button type="submit">Generate Resume</button>
+    </form>
+  </div>
+</body>
+</html>
